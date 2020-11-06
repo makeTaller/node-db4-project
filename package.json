@@ -5,13 +5,15 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.21.11",
-    "sqlite": "^4.0.15"
+    "knex": "^0.21.12",
+    "sqlite": "^4.0.15",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
   },
   "scripts": {
+    "server": " nodemon index.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
