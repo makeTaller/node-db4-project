@@ -1,7 +1,7 @@
 const Cookbook = require("../kconfig")
 
 module.exports = {
-  getRecipes 
+  getRecipes
 } 
 
 function getRecipes() {
