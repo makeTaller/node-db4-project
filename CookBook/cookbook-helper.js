@@ -3,12 +3,15 @@ const Cookbook = require("../kconfig")
 module.exports = {
   getRecipes,
   getShoppingList,
+  getInstructions
 } 
 
+// - getRecipes()`: should return a list of all recipes in the database.
 function getRecipes() {
     return Cookbook("Recipe")
 }    
 
+// - `getShoppingList(recipe_id)`: should return a list of all ingredients and quantities for a given recipe
 function getShoppingList(id) {
   // return Cookbook("Recipe as r")
   // return Cookbook("Cooking as c")
@@ -23,6 +26,12 @@ function getShoppingList(id) {
 }
 
 
-// - getRecipes()`: should return a list of all recipes in the database.
-// - `getShoppingList(recipe_id)`: should return a list of all ingredients and quantities for a given recipe
 // - `getInstructions(recipe_id)`: should return a list of step by step instructions for preparing a recipe
+function getInstructions(id) {
+  // return Cookbook( "Recipe as r" )
+     return Cookbook( "Cooking as c")
+          .select("r.name", "c.step_number", "c.instructions" )
+          .join("Recipe as r", "r.id", "c.recipe_id")
+          .where({ recipe_id: id })
+
+}

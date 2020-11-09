@@ -30,12 +30,13 @@ router.get("/list/:id", (req,res) => {
 // - `getInstructions(recipe_id)`: should return a list of step by step instructions for preparing a recipe
 
 router.get("/instructions/:id", (req,res) => {
-    db.getInstructions(req.params.id)
+    const { id } = req.params
+    db.getInstructions(id)
         .then( ( instructions ) => {
             res.json( instructions )
         })
         .catch(( error) => {
-            res.status(500).json({ message: "Failed to get list" })
+            res.status(500).json({ message: "Failed to get instructions" })
         })
 })
 
