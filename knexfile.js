@@ -6,7 +6,7 @@ module.exports = {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './data/Cookbook.db3'
+      filename: './data/CookBook.db3'
     },
     seeds: {
       directory: './seeds'
