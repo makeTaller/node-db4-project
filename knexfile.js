@@ -10,7 +10,7 @@ module.exports = {
     },
     seeds: {
       directory: './seeds'
-    }
+    },
   },
 
   staging: {
